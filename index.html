@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Three.js AMD Example</title>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+    body { width: 100vw; height: 100vh; }
+    canvas { display: block; }
+  </style>
+  <!-- RequireJS from local node_modules -->
+  <script src="node_modules/requirejs/require.js"></script>
+  <script>
+    require.config({
+      paths: {
+        'three-app': 'dist/three-app.amd' // Map 'three-app' module ID to its file path (without .js extension)
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="three-container" style="width:100vw; height:100vh;"></div>
+  <script>
+    require(["three-app"], function() {
+      // The main.js code runs automatically on load
+    });
+  </script>
+</body>
+</html>
