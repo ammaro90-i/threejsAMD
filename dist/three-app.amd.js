@@ -78277,40 +78277,39 @@ void main() {
 	window.THREE = THREE;
 
 	// Create scene
-	const scene = new Scene();
+	var scene = new Scene();
 	scene.background = new Color(0xf0f0f0);
 
 	// Create camera
-	const camera = new PerspectiveCamera(
-	  75,
-	  window.innerWidth / window.innerHeight,
-	  0.1,
-	  1000
-	);
+	var camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 	camera.position.set(2, 2, 5);
 
 	// Create renderer
-	const renderer = new WebGLRenderer({ antialias: true });
+	var renderer = new WebGLRenderer({
+	  antialias: true
+	});
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.getElementById('three-container').appendChild(renderer.domElement);
 
 	// Add a cube
-	const geometry = new BoxGeometry(1, 1, 1);
-	const material = new MeshLambertMaterial({ color: 0x468585 });
-	const cube = new Mesh(geometry, material);
+	var geometry = new BoxGeometry(1, 1, 1);
+	var material = new MeshLambertMaterial({
+	  color: 0x468585
+	});
+	var cube = new Mesh(geometry, material);
 	scene.add(cube);
 
 	// Add light
-	const light = new DirectionalLight(0xffffff, 1);
+	var light = new DirectionalLight(0xffffff, 1);
 	light.position.set(5, 10, 7.5);
 	scene.add(light);
 
 	// Add OrbitControls
-	const controls = new OrbitControls(camera, renderer.domElement);
+	var controls = new OrbitControls(camera, renderer.domElement);
 	controls.enableDamping = true;
 
 	// Handle window resize
-	window.addEventListener('resize', () => {
+	window.addEventListener('resize', function () {
 	  camera.aspect = window.innerWidth / window.innerHeight;
 	  camera.updateProjectionMatrix();
 	  renderer.setSize(window.innerWidth, window.innerHeight);

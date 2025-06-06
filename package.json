@@ -8,8 +8,13 @@
     "three": "^0.176.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/plugin-transform-react-jsx": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "eslint-plugin-react": "^7.37.5",
     "grunt": "^1.6.1",
     "grunt-contrib-connect": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
